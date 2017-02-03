@@ -6,6 +6,7 @@ except ImportError:
     from PyQt5 import QtCore, QtGui
 import os
 from decorators import format_directory
+import platform
 
 
 @format_directory
@@ -42,8 +43,10 @@ def gui_fname(dir=None, message='', ext='tif'):
                                          directory = dir, 
                                          filter = _filter)
 
-    return fname
-
+    if platform.system() == 'Linux':
+        return fname[0]
+    else:
+        return fname
 
 @format_directory
 def gui_single_file(dir=None):

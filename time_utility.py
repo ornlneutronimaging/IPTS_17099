@@ -2,6 +2,7 @@ import os
 from PIL import Image
 from PIL.ExifTags import TAGS
 import numpy as np
+import time
 
 
 def format_time_stamp(file_name = None, time_stamp = None):
