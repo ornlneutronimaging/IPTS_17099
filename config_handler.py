@@ -13,7 +13,7 @@ def save_config(key='', value='', group=''):
 
     if value == '':
         value = None
-    settings.setValue(key, str(value))
+    settings.setValue(key, value)
     
     if not (group == ''):
         settings.endGroup()
@@ -28,6 +28,6 @@ def load_config(key='', default_value='', group=''):
     if (value is None) or (value == 'None'):
         return default_value
     else:
-        return str(value)
+        return value
 
     
