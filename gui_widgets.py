@@ -46,6 +46,7 @@ def gui_fname(dir=None, message='', ext='tif'):
                                          filter = _filter)
 
     if platform.system() == 'Linux':
+        return fname[0]
     else:
         return fname
 
