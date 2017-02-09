@@ -18,7 +18,7 @@ def gui_dname(dir=None, message=''):
                                             dir, 
                                             QFileDialog.ShowDirsOnly)
     if platform.system() == 'Linux':
-        return dirname[0]
+        return dirname
     else:
         return dirname
 
