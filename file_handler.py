@@ -129,6 +129,17 @@ def make_ascii_file(metadata=[], data=[], output_file_name=''):
        
     f.close()
     
-    
-    
+def make_ascii_file_3d_array(metadata=[], first_column=[], data=[], output_file_name=''):
+           
+    f = open(output_file_name, 'w')
+    for _meta in metadata:
+        _line = _meta + "\n"
+        f.write(_line)
+        
+    for _index, _data in enumerate(data):
+        _str_data = [str(_value) for _value in _data]
+        _line = "{}".format(first_column[_index]) + ",".join(_str_data) + "\n"
+        f.write(_line)
+       
+    f.close()
    
