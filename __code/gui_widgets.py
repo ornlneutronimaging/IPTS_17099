@@ -59,10 +59,7 @@ def gui_fimage(dir=None, message=''):
                                          directory = dir, 
                                          filter = _filter)
 
-    if platform.system() == 'Linux':
-        return fname[0]
-    else:
-        return fname
+    return fname
     
 @format_directory
 def gui_single_file(dir=None):

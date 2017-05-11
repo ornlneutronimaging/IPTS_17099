@@ -11,6 +11,7 @@ def load_data(file_name):
     load the various file_name format
     '''
     data_type = get_data_type(file_name)
+    print(file_name)
     if data_type == '.fits':
         hdulist = pyfits.open(file_name)
         hdu = hdulist[0]
