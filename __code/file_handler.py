@@ -11,7 +11,6 @@ def load_data(file_name):
     load the various file_name format
     '''
     data_type = get_data_type(file_name)
-    print(file_name)
     if data_type == '.fits':
         hdulist = pyfits.open(file_name)
         hdu = hdulist[0]
@@ -99,7 +98,7 @@ def export_file(data=[], output_folder='', base_file_name=''):
     
 def make_or_reset_folder(folder_name):
     if os.path.exists(folder_name):
-         shutil.rmtree(folder_name)
+        shutil.rmtree(folder_name)
     os.makedirs(folder_name)         
     
 def remove_SummedImg_from_list(list_files):

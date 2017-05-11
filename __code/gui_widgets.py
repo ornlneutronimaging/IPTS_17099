@@ -45,10 +45,8 @@ def gui_fname(dir=None, message='', ext='tif'):
                                          directory = dir, 
                                          filter = _filter)
 
-    if platform.system() == 'Linux':
-        return fname[0]
-    else:
-        return fname
+  
+    return fname
 
 @format_directory
 def gui_fimage(dir=None, message=''):
