@@ -45,7 +45,6 @@ def gui_fname(dir=None, message='', ext='tif'):
                                          directory = dir, 
                                          filter = _filter)
 
-  
     return fname
 
 @format_directory
