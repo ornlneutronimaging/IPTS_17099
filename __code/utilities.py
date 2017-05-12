@@ -121,20 +121,22 @@ def get_working_dir(ipts=''):
     '~/.notebooks_config.cfg', otherwise will return the current folder location
     '''
     if ipts:
-        return '/HFIR/CG1DImaging/IPTS-{}/'.format(ipts)
-    else:
-        config_path = os.path.join(os.path.expanduser('~/'), '.notebooks_config.cfg')
-        if os.path.exists(config_path):
-            parser = RawConfigParser()
-            parser.read(config_path)
-            try:
-                working_dir = parser.get('main_session', 'working_dir')
-            except:
-                working_dir = './'
-        else:
-            working_dir = './'
+        _path = '/HFIR/CG1DImaging/IPTS-{}/'.format(ipts)
+        if os.path.exists(_path):
+            return _path
 
-        return working_dir
+    config_path = os.path.join(os.path.expanduser('~/'), '.notebooks_config.cfg')
+    if os.path.exists(config_path):
+        parser = RawConfigParser()
+        parser.read(config_path)
+        try:
+            working_dir = parser.get('main_session', 'working_dir')
+        except:
+            working_dir = './'
+    else:
+        working_dir = './'
+
+    return working_dir
                 
                 
     
